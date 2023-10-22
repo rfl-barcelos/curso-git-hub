@@ -13,6 +13,12 @@ on:
 jobs:
 
   test:
+    strategy:
+      matrix:
+        go_version: ['1.17', '1.18', '>=1.18']
+        os: [ubuntu-22.04, ubuntu-20.04]
+    runs-on: ${{ matrix.os }}
+    
     env:
       HOST: localhost
       PORT: 5432
@@ -20,11 +26,6 @@ jobs:
       PASSWORD: root
       DBNAME: root
       
-    strategy:
-      matrix:
-        go_version: ['1.17', '1.18', '>=1.18']
-        os: [ubuntu-22.04, ubuntu-20.04]
-    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
     
