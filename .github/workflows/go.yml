@@ -22,7 +22,7 @@ jobs:
     
     env:
       HOST: localhost
-      DBPORT: teste
+      DBPORT: 5432
       USER: root
       PASSWORD: root
       DBNAME: root
