@@ -17,11 +17,12 @@ jobs:
       matrix:
         go_version: ['1.17', '1.18', '>=1.18']
         os: [ubuntu-22.04, ubuntu-20.04]
+    
     runs-on: ${{ matrix.os }}
     
     env:
       HOST: localhost
-      PORT: 5432
+      PORT: teste
       USER: root
       PASSWORD: root
       DBNAME: root
